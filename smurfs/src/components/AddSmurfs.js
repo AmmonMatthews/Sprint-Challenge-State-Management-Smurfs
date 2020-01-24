@@ -6,7 +6,6 @@ const AddSmurf = (props) =>{
     const [smurf, setSmurf] = useState({name:"", age:"", height:""})
     // const smurfsFam = props.smurfs
     const handleChange = e =>{
-        console.log(e.target.name)
         setSmurf({...smurf, [e.target.name]: e.target.value})
     }
 
@@ -16,7 +15,8 @@ const AddSmurf = (props) =>{
         setSmurf({
             name: "",
             age: "",
-            height: ""
+            height: "",
+            id: Date.now
         })
     }
 
