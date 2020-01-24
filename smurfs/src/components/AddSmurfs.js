@@ -4,10 +4,10 @@ import { connect } from "react-redux";
 
 const AddSmurf = (props) =>{
     const [smurf, setSmurf] = useState({name:"", age:"", height:""})
-    
+    // const smurfsFam = props.smurfs
     const handleChange = e =>{
-        
-        setSmurf({...smurf, name: e.target.value, height: e.target.vaule, age: e.target.value})
+        console.log(e.target.name)
+        setSmurf({...smurf, [e.target.name]: e.target.value})
     }
 
     const handleSubmit= event => {
@@ -22,48 +22,50 @@ const AddSmurf = (props) =>{
 
     return(
         <form onSubmit={handleSubmit}>
-            <label id="nname"> Name </label>
                
-                <input 
-                maxLength= "20"
-                id="nname"
-                name= "name"
-                type="text"
-                placeholder="name"
-                value={smurf.name}
-                onChange={handleChange}
-                />
-
-            
-           <label>
-                height
+               <label id="name"> Name</label>
                 <input
-                id="heigh"
+                    id="name"    
+                    name="name"
+                    type="text"
+                    placeholder="name"
+                    value={smurf.name}
+                    onChange={handleChange}
+                />
+            
+            <label id="height"> height</label>
+                <input
+                id="height"
                 name="height"
-                label="height"
                 type="text"
                 placeholder="height"
                 value={smurf.height}
                 onChange={handleChange}
                 />
 
-           </label>
-            <label>
-                Age
+           
+            <label id="age">Age</label>
             <input
-            id="ag"
+            id="age"
             name="age"
-            label="age"
             type="text"
             placeholder="Age"
             value={smurf.age}
             onChange={handleChange}
             />
-            </label>
             <button onClick={handleSubmit}>Add to Family</button>
         </form>
     )
 }
+
+// const mapStateToProps = state => {
+//     return{
+//         isLoading: state.addSmurfReducer.isFetching,
+//         smurfs: state.addSmurfReducer.smurfs,
+//         error: state.addSmurfReducer.error
+//     }
+
+// }
 
 export default connect(
     null, 
