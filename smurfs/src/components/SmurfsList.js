@@ -29,9 +29,9 @@ const SmurfsList = props => {
 const mapStateToProps = state => {
     console.log(state)
     return {
-        isLoading: state.isLoading,
-        smurfs: state.smurfs, 
-        error: state.error,
+        isLoading: state.smurfsReducer.isLoading,
+        smurfs: state.smurfsReducer.smurfs, 
+        error: state.smurfsReducer.error,
     }
 
 }

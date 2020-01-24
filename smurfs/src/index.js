@@ -10,7 +10,7 @@ import "./index.css";
 import App from "./components/App";
 import { smurfsReducer } from "./reducers/smurfsReducer";
 
-const store = createStore( smurfsReducer, applyMiddleware(thunk, logger))
+const store = createStore(reducer, applyMiddleware(thunk, logger))
 
 ReactDOM.render(
     <Provider store={store}>

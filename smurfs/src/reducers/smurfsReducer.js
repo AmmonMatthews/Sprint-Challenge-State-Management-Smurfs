@@ -9,7 +9,7 @@ const initialState = {
 
 
 export const smurfsReducer = (state = initialState, action) => {
-    switch(action.types) {
+    switch(action.type) {
         case FETCHING_SMURF_START:
             return{
                 ...state,
